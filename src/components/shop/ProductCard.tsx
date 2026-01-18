@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Product, formatPrice } from "@/content/products";
-import { addToCartLite } from "@/lib/cartStorage";
+import { useCart } from "@/cart/CartContext";
 
 export default function ProductCard({ product }: { product: Product }) {
+  const cart = useCart();
+
   const price = formatPrice(product.price, product.currency ?? "USD");
   const badge = product.badge;
 
@@ -43,14 +45,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <button
             type="button"
             className="focus-ring rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700"
-            onClick={() =>
-              addToCartLite({
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                note: product.badge
-              })
-            }
+            onClick={() => cart.addProduct(product, 1)}
           >
             Agregar
           </button>
