@@ -9,12 +9,11 @@ export const site = {
   },
 
   topbar: {
-    enabled: true,
-    text: "Pedidos por encargo • Envíos disponibles",
-    // Similar a Hario: barra azul, texto claro (sin negro)
-    bgClass: "bg-sky-300",
-    textClass: "text-white"
-  },
+  enabled: true,
+  text: "Pedidos por encargo • Envíos disponibles",
+  bgClass: "bg-[#F1D3D9]",      // Icy Pink approx
+  textClass: "text-slate-800"   // mejor contraste que blanco
+},
 
   hero: {
     // Elige UNA (por ahora dejo la 1 como default)
