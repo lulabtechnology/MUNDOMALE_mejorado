@@ -1,5 +1,6 @@
 export const site = {
-  url: "https://mundo-de-male.vercel.app", // placeholder (Vercel luego lo reemplaza; puedes editar)
+  url: "https://mundo-de-male.vercel.app", // placeholder; Vercel luego lo reemplaza si quieres
+
   brand: {
     name: "Mundo de Male",
     description:
@@ -9,7 +10,20 @@ export const site = {
 
   topbar: {
     enabled: true,
-    text: "Pedidos por encargo • Envíos disponibles"
+    text: "Pedidos por encargo • Envíos disponibles",
+    // Similar a Hario: barra azul, texto claro (sin negro)
+    bgClass: "bg-sky-300",
+    textClass: "text-white"
+  },
+
+  hero: {
+    // Elige UNA (por ahora dejo la 1 como default)
+    taglines: [
+      "Detalles hechos con calma, para regalar y disfrutar.",
+      "Jardín, cocina y experiencias con sello artesanal.",
+      "Creaciones por encargo que convierten momentos en rituales."
+    ],
+    selectedTaglineIndex: 0
   },
 
   nav: [
@@ -17,12 +31,12 @@ export const site = {
     { label: "Tienda", href: "/tienda" },
     { label: "Galería", href: "/galeria" },
     { label: "Nosotros", href: "/nosotros" },
-    { label: "Preguntas frecuentes", href: "/preguntas-frecuentes" }
+    { label: "Preguntas frecuentes", href: "/preguntas-frecuentes" },
+    { label: "Contacto/WhatsApp", href: "/contacto" }
   ],
 
   contact: {
-    // IMPORTANTE: placeholder. Reemplazas luego por el real.
-    // Formato recomendado: solo dígitos con código país (sin +). Ej: "50761234567"
+    // Reemplaza por el real. Recomendado: solo dígitos con país (sin +)
     whatsappNumber: "50700000000",
     whatsappDefaultMessage: "Hola, me gustaría hacer un pedido con Mundo de Male.",
     instagramUrl: "https://instagram.com/tu_instagram_aqui"
