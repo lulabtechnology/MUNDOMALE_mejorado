@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================
+   Fuentes (Radnika local opcional)
+   - Si NO subes los .woff2 aún, el navegador usará fallback sin romper build.
+   =========================== */
+@font-face {
+  font-family: "Radnika";
+  src: url("/fonts/Radnika-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Radnika";
+  src: url("/fonts/Radnika-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Radnika";
+  src: url("/fonts/Radnika-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Font vars (Inter/Bodoni se setean vía next/font en layout) */
+  --font-body: "Radnika", var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-bodoni), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    color: rgb(15 23 42); /* slate-900 (NO es negro puro) */
+    background: rgb(248 250 252); /* slate-50 */
+    text-rendering: geometricPrecision;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .container-pad {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50;
+  }
+
+  .card {
+    @apply rounded-3xl border border-slate-200 bg-white shadow-soft;
+  }
+
+  .muted {
+    @apply text-slate-600;
+  }
+}
