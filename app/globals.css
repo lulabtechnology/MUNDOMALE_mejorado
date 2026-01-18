@@ -29,16 +29,18 @@
 }
 
 :root {
-  /* Font vars (Inter/Bodoni se setean vía next/font en layout) */
+  /* Radnika como base + Inter fallback */
   --font-body: "Radnika", var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-heading: var(--font-bodoni), ui-serif, Georgia, serif;
+  /* Títulos también en Radnika (como pediste) */
+  --font-heading: "Radnika", var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 @layer base {
-  html,
   body {
-    height: 100%;
+    font-weight: 300; /* Radnika Light para textos por defecto */
   }
+}
+
 
   body {
     color: rgb(15 23 42); /* slate-900 (NO es negro puro) */
